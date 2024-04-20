@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended:false})) ;
 app.use(express.json()) ; 
 app.use(cors(
     {
-  origin: "*",
+  origin: "xpense-bot-backend.vercel.app",
   credential: true,
   method: ["GET", "POST", "PUT", "DELETE"],
 }
