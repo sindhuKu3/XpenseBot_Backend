@@ -27,8 +27,9 @@ app.use(checkForAuthenticationCookie("token")) ;
 app.use("/api/users" , userRoute) ;
 app.use("/api/transaction", transactionRoute);
 
-
-
+app.get("/",(req,res)=>{
+  res.json("Hello");
+})
 
 const server=()=>{
     db() ; 
