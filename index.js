@@ -12,13 +12,7 @@ const transactionRoute = require("./routes/transaction");
 //middlewares
 app.use(express.urlencoded({extended:false})) ; 
 app.use(express.json()) ; 
-app.use(
-  cors({
-    origin: "xpense-bot-frontend.vercel.app",
-    credential: true,
-    method: ["GET", "POST", "PUT", "DELETE"],
-  })
-); 
+app.use(cors()); 
 
 app.use(cookieParser()) ; 
 app.use(checkForAuthenticationCookie("token")) ;
