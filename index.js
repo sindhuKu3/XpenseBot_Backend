@@ -17,13 +17,20 @@ app.use(cors());
 app.use(cookieParser()) ; 
 app.use(checkForAuthenticationCookie("token")) ;
 
-
+app.use(
+  cors({
+    origin: ["https://xpense-bot-frontend.vercel.app/"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 app.use("/api/users" , userRoute) ;
 app.use("/api/transaction", transactionRoute);
 
 app.get("/",(req,res)=>{
   res.json("Hello");
 })
+
 
 const server=()=>{
     db() ; 
