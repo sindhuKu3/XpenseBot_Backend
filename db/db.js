@@ -2,7 +2,7 @@ const mongoose = require("mongoose") ;
 const db = async()=>{
     try {
         mongoose.set('strictQuery',false) ;
-       await mongoose.connect("mongodb+srv://sindhuku3:lejmTtMjhUxMVeTP@cluster0.sniin3u.mongodb.net/Xpense_Bot?retryWrites=true&w=majority&appName=Cluster0",{
+       await mongoose.connect(process.env.MONGO_URL,{
     
        }) ; 
        console.log('mongodb connected') ;  
