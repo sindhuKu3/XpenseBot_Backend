@@ -27,9 +27,7 @@ app.use(checkForAuthenticationCookie("token")) ;
 app.use("/api/users" , userRoute) ;
 app.use("/api/transaction", transactionRoute);
 
-app.get("/",(req,res)=>{
-  res.json("Hello");
-})
+
 //----deployement purpose-------------
 const __dirname1 = path.resolve();
 
